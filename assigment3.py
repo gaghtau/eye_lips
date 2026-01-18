@@ -21,7 +21,6 @@ while True:
         roi_gray = gray[y:y+h, x:x+w]
         roi_color = frame[y:y+h, x:x+w]
 
-        # -------- ГЛАЗА --------
         eyes = eye_cascade.detectMultiScale(roi_gray, 1.3, 5)
         for (ex, ey, ew, eh) in eyes:
             cv2.circle(
@@ -32,7 +31,6 @@ while True:
                 2
             )
 
-        # -------- РОТ (область) --------
         mouth_y = int(h * 0.6)
         mouth_h = int(h * 0.25)
         mouth_x = int(w * 0.2)
